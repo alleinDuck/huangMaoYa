@@ -1,0 +1,6 @@
+cloud:
+  discovery: consul
+  config: consul
+extension:
+  - data: application-oracle-public.yml
+    refresh: true

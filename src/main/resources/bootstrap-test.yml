@@ -1,2 +1,36 @@
-server:
-  port: 8088
+bsfit.common.cloud:
+  discovery: consul
+  config: consul
+
+spring.cloud.consul:
+  host: 10.100.1.21
+  port: 8600
+  discovery:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
+    healthCheckCriticalTimeout: 5m
+    healthCheckTimeout: 10s
+  config:
+    prefix: bsfit
+    defaultContext: public
+    format: YAML
+    data-key: data
+    profile-separator: '-'
+
+spring.cloud.nacos:
+  discovery:
+    server-addr: 10.100.1.13:8848
+  config:
+    server-addr: 10.100.1.13:8848
+    file-extension: yml
+    extension-configs:
+      - data-id: application-oracle-public.yml
+        refresh: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://10.100.1.13:9874/eureka/

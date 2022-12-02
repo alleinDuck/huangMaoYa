@@ -1,6 +1,6 @@
 package com.cn.sparkpractice.generateData;
 
-public class MakeDataTest {
+public class GenerateDataTest {
     //@Test
     //public void readCsvToParquet() {
     //    String path = "/Users/luoyuxiong/decision-optimizer-parent/batch-optimizer-sparkapp/src/test/resources/streamConf/data/pay.csv";

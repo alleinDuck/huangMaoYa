@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class YamlToolsUtil {
+public class YamlToJsonUtil {
     private final static String BOOTSTRAP = "bootstrap-test.yml";
 
     private final ReentrantLock lock = new ReentrantLock();

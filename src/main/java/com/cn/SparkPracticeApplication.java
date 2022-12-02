@@ -1,4 +1,4 @@
-package com.cn.sparkpractice;
+package com.cn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
