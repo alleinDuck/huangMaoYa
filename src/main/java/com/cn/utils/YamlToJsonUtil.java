@@ -4,13 +4,14 @@ import com.alibaba.fastjson.JSONObject;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * The type Yaml to json util.
  */
-public class YamlToJsonUtil {
+public class YamlToJsonUtil implements Serializable {
     private final static String BOOTSTRAP = "bootstrap-test.yml";
 
     private final Yaml yaml = new Yaml();
