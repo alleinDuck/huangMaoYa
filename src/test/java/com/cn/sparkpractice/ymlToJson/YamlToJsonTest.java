@@ -49,7 +49,7 @@ public class YamlToJsonTest {
     @Test
     public void YAMLToJSON03() {
         String key = "spring.cloud.nacos";
-        YamlToJsonUtil yamlToJsonUtil = new YamlToJsonUtil();
+        YamlToJsonUtil yamlToJsonUtil = YamlToJsonUtil.getInstance();
         JSONObject jsonObject = yamlToJsonUtil.YamlToJson(key);
         System.out.println(jsonObject);
     }
