@@ -2,6 +2,7 @@ package com.cn.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.SafeConstructor;
 
 import java.io.InputStream;
 import java.io.Serializable;
@@ -14,7 +15,7 @@ import java.util.Map;
 public class YamlToJsonUtil implements Serializable {
     private final static String BOOTSTRAP = "bootstrap-test.yml";
 
-    private final Yaml yaml = new Yaml();
+    private final Yaml yaml = new Yaml(new SafeConstructor());
 
     /**
      * Yaml to json.
