@@ -1,4 +1,4 @@
-package com.cn.sparkpractice.entity.dataSource;
+package com.cn.sparkPractice.entity.dataSource;
 
 import lombok.Data;
 

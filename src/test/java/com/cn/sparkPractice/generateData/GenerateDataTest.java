@@ -1,8 +1,8 @@
-package com.cn.sparkpractice.generateData;
+package com.cn.sparkPractice.generateData;
 
-import com.cn.sparkpractice.BaseTest;
-import com.cn.sparkpractice.dataSource.impl.CsvDataSource;
-import com.cn.sparkpractice.entity.dataSource.CsvEntity;
+import com.cn.sparkPractice.BaseTest;
+import com.cn.sparkPractice.dataSource.impl.CsvDataSource;
+import com.cn.sparkPractice.entity.dataSource.CsvEntity;
 import com.cn.utils.ParquetUtil;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;

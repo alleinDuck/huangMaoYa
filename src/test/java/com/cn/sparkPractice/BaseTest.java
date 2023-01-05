@@ -1,4 +1,4 @@
-package com.cn.sparkpractice;
+package com.cn.sparkPractice;
 
 import org.apache.spark.sql.SparkSession;
 

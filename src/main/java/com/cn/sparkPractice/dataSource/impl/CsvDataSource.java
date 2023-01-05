@@ -1,7 +1,7 @@
-package com.cn.sparkpractice.dataSource.impl;
+package com.cn.sparkPractice.dataSource.impl;
 
-import com.cn.sparkpractice.dataSource.AbstractDatasource;
-import com.cn.sparkpractice.entity.dataSource.CsvEntity;
+import com.cn.sparkPractice.dataSource.AbstractDatasource;
+import com.cn.sparkPractice.entity.dataSource.CsvEntity;
 import lombok.extern.log4j.Log4j2;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

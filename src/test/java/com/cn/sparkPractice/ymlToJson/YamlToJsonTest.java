@@ -1,7 +1,7 @@
-package com.cn.sparkpractice.ymlToJson;
+package com.cn.sparkPractice.ymlToJson;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cn.sparkpractice.entity.CloudEntity;
+import com.cn.sparkPractice.entity.CloudEntity;
 import com.cn.utils.YamlToJsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;

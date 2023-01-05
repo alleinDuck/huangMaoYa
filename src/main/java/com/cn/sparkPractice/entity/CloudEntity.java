@@ -1,4 +1,4 @@
-package com.cn.sparkpractice.entity;
+package com.cn.sparkPractice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

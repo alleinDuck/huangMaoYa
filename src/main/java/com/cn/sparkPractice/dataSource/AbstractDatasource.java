@@ -1,6 +1,6 @@
-package com.cn.sparkpractice.dataSource;
+package com.cn.sparkPractice.dataSource;
 
-import com.cn.sparkpractice.entity.dataSource.DatasourceEntity;
+import com.cn.sparkPractice.entity.dataSource.DatasourceEntity;
 import org.apache.spark.sql.SparkSession;
 
 public abstract class AbstractDatasource<T extends DatasourceEntity>{
