@@ -85,6 +85,13 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--propertiesToJson-->
+        <dependency>
+            <groupId>pl.jalokim.propertiestojson</groupId>
+            <artifactId>java-properties-to-json</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
