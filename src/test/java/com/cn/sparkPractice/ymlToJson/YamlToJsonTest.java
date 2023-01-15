@@ -1,10 +1,12 @@
 package com.cn.sparkPractice.ymlToJson;
 
 import com.alibaba.fastjson.JSONObject;
+import com.cn.model.Person;
 import com.cn.sparkPractice.entity.CloudEntity;
 import com.cn.utils.YamlToJsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,6 +21,9 @@ import java.util.Map;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 public class YamlToJsonTest {
+
+    @Autowired
+    private Person person;
 
     @Test
     public void YAMLToJSON01() {
@@ -52,5 +57,14 @@ public class YamlToJsonTest {
         YamlToJsonUtil yamlToJsonUtil = YamlToJsonUtil.getInstance();
         JSONObject jsonObject = yamlToJsonUtil.YamlToJson(key);
         System.out.println(jsonObject);
+    }
+
+    // 从配置中心取值
+    @Test
+    public void YAMLToJSON() {
+        Yaml yaml = new Yaml(new Constructor(Person.class));
+        Person person = yaml.loadAs(JSONObject.toJSONString(this.person), Person.class);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(person));
+        System.out.println(jsonObject.toString());
     }
 }

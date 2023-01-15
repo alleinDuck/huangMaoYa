@@ -4,3 +4,14 @@ cloud:
 extension:
   - data: application-oracle-public.yml
     refresh: true
+
+test:
+  info:
+    name: xxx
+    age: 22
+  pet:
+    - name: cat
+      age: 1
+
+    - name: dog
+      age: 2
