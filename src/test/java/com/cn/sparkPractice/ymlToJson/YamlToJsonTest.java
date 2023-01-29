@@ -9,19 +9,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
-import org.springframework.core.env.PropertySource;
-import org.springframework.core.env.StandardEnvironment;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
-import pl.jalokim.propertiestojson.util.PropertiesToJsonConverter;
-import pl.jalokim.propertiestojson.util.PropertiesToJsonConverterBuilder;
 
 import java.io.InputStream;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootTest(classes = SpringBootTest.class)
 @RunWith(SpringRunner.class)
@@ -30,9 +25,6 @@ public class YamlToJsonTest {
 
     @Autowired
     private Person person;
-
-    @Autowired
-    private Environment environment;
 
     @Test
     public void YAMLToJSON01() {
@@ -81,29 +73,8 @@ public class YamlToJsonTest {
     // 从配置中心取值，没有pojo
     @Test
     public void YamlToJsonEnvironment() {
-        List<?> propertySourceCollection = ((StandardEnvironment) environment)
-                .getPropertySources().stream()
-                .map(PropertySource::getSource)
-                .collect(Collectors.toList());
-
-        List<LinkedHashMap<String, Object>> list = new ArrayList<>();
-        for (Object source : propertySourceCollection) {
-            if (source instanceof LinkedHashMap) {
-                list.add((LinkedHashMap<String, Object>) source);
-            }
-        }
-
-        Map<String, Object > propertyMap = list.stream()
-                .flatMap(map -> map.entrySet().stream())
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (value1, value2) -> value1));
-
         YamlToJsonForCloudUtil yamlToJsonUtil = YamlToJsonForCloudUtil.getInstance();
-        PropertiesToJsonConverter converter = PropertiesToJsonConverterBuilder.builder().build();
-        String json = converter.convertFromValuesAsObjectMap(propertyMap);
-        JSONObject dom = yamlToJsonUtil.YamlToJson("dom", json);
+        JSONObject dom = yamlToJsonUtil.YamlToJson("dom");
         System.out.println(JSONObject.toJSONString(dom));
     }
 }
