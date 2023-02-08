@@ -92,6 +92,12 @@
             <artifactId>java-properties-to-json</artifactId>
             <version>5.1.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.mitre.dsmiley.httpproxy</groupId>
+            <artifactId>smiley-http-proxy-servlet</artifactId>
+            <version>1.12.1</version>
+        </dependency>
     </dependencies>
 
     <build>
