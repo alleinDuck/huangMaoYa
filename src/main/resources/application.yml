@@ -2,8 +2,6 @@ server:
   port: 8088
 
 proxy:
-  enabled: true
-  show-log: true
-  proxy-attributes:
-    - servletUrl: /baidu/*
-      targetUrl: https://baidu.com
+  showLog: true
+  servletUrl: /baidu/*
+  targetUrl: https://www.baidu.com
