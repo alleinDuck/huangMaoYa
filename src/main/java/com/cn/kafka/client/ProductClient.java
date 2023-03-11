@@ -1,5 +1,7 @@
 package com.cn.kafka.client;
 
+import com.cn.kafka.interceptor.DiyProducerInterceptor;
+import com.cn.kafka.partition.DiyPartition;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
@@ -47,6 +49,13 @@ public class ProductClient {
         示例中配置了10次重试。如果重试了10次之后还没有恢复，那么仍会抛出异常，进而发送的外层逻辑就要处理这些异常了
          */
         props.put(ProducerConfig.RETRIES_CONFIG, 10);
+
+        // 自定义分区器
+        props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, DiyPartition.class.getName());
+
+        // 自定义拦截器
+        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, DiyProducerInterceptor.class.getName());
+
         return props;
     }
 
