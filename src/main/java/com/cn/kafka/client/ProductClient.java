@@ -1,7 +1,7 @@
 package com.cn.kafka.client;
 
-import com.cn.kafka.interceptor.DiyProducerInterceptor;
-import com.cn.kafka.partition.DiyPartition;
+import com.cn.kafka.interceptor.ProducerInterceptors;
+import com.cn.kafka.partition.ProductPartition;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
@@ -61,10 +61,10 @@ public class ProductClient {
         props.put(ProducerConfig.RETRIES_CONFIG, 10);
 
         // 自定义分区器
-        props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, DiyPartition.class.getName());
+        props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, ProductPartition.class.getName());
 
         // 自定义拦截器
-        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, DiyProducerInterceptor.class.getName());
+        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, ProducerInterceptors.class.getName());
 
         return props;
     }

@@ -17,7 +17,7 @@ import java.util.Map;
  * </p>
  *
  */
-public class CompanySerializer implements Serializer<Company> {
+public class ProductCompanySerializer implements Serializer<Company> {
     @Override
     public void configure(Map configs, boolean isKey) {
 

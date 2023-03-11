@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * </p>
  *
  */
-public class DiyPartition implements Partitioner {
+public class ProductPartition implements Partitioner {
     private final AtomicInteger counter = new AtomicInteger(0);
 
     @Override

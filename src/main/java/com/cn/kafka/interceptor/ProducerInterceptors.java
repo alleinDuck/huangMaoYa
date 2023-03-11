@@ -24,7 +24,7 @@ import java.util.Map;
  * </p>
  *
  */
-public class DiyProducerInterceptor implements ProducerInterceptor<String, String> {
+public class ProducerInterceptors implements ProducerInterceptor<String, String> {
     private volatile long sendSuccess = 0;
     private volatile long sendFailure = 0;
 
