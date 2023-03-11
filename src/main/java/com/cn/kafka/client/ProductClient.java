@@ -9,6 +9,16 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
+/**
+ * 一个正常的生产逻辑需要具备以下几个步骤：
+ * <p>
+ *     <li>配置生产者客户端参数及创建相应的生产者实例</li>
+ *     <li>构建待发送的消息</li>
+ *     <li>发送消息</li>
+ *     <li>关闭生产者实例</li>
+ * </p>
+ *
+ */
 public class ProductClient {
     public static final String brokerList = "localhost:9092";
     public static final String topic = "topic-demo";
