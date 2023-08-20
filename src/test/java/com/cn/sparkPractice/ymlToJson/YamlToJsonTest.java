@@ -1,7 +1,7 @@
 package com.cn.sparkPractice.ymlToJson;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cn.model.Person;
+import com.cn.model.Human;
 import com.cn.sparkPractice.entity.CloudEntity;
 import com.cn.utils.YamlToJsonForCloudUtil;
 import com.cn.utils.YamlToJsonUtil;
@@ -24,7 +24,7 @@ import java.util.Map;
 public class YamlToJsonTest {
 
     @Autowired
-    private Person person;
+    private Human human;
 
     @Test
     public void YAMLToJSON01() {
@@ -63,9 +63,9 @@ public class YamlToJsonTest {
      //从配置中心取值，有pojo
     @Test
     public void YAMLToJSON() {
-        Yaml yaml = new Yaml(new Constructor(Person.class));
-        Person person = yaml.loadAs(JSONObject.toJSONString(this.person), Person.class);
-        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(person));
+        Yaml yaml = new Yaml(new Constructor(Human.class));
+        Human human = yaml.loadAs(JSONObject.toJSONString(this.human), Human.class);
+        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(human));
         System.out.println(jsonObject.toString());
     }
 
